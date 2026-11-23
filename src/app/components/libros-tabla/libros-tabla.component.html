@@ -1,0 +1,28 @@
+<section class="tarjeta">
+  <h2>Libros por biblioteca</h2>
+
+  @if (filas().length === 0) {
+    <p>No hay libros registrados.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Año</th>
+          <th>Biblioteca</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (fila of filas(); track fila.id) {
+          <tr>
+            <td>{{ fila.titulo }}</td>
+            <td>{{ fila.autor }}</td>
+            <td>{{ fila.anio }}</td>
+            <td>{{ fila.biblioteca }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</section>
